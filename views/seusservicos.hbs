@@ -1,0 +1,54 @@
+{{> menu }}
+
+<h3>Lista de Trabalhos</h3>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Cod. Serviço</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Dia</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Observação</th>
+            <th scope="col">Cliente</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each agenda}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{formata-servico tipo}}</td>
+            <td> {{data-mes-ano Dia}} </td>
+            <td> {{Hora}} </td>
+            <td>{{observacao }}</td>
+            <td> {{user.name}}</td>
+            <td>
+                <p>
+                    <button class="btn btn-outline-secondary btn-lg fa fa-info" type="button" data-toggle="collapse"
+                        data-target="#user_{{id}}" aria-expanded="false" aria-controls="user_{{id}}"></button>
+                </p>
+                <div class="collapse" id="user_{{id}}">
+                    <div class="card border-secondary mb-3" style="max-width: 18rem;">
+
+                        <div class="card-body text-secondary">
+                            <h5 class="card-title">{{user.name}}</h5>
+                            <p class="card-text"><b>Fone:</b> {{user.fone}}</p>
+                            <p class="card-text"><b>Email:</b> {{user.email}}</p>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+        {{/each }}
+    </tbody>
+
+</table>
+{{#unless agenda}}
+<div style="text-align: center;">
+    <div class="jumbotron jumbotron-fluid">
+        <p>Nenhum trabalho previsto!</p>
+    </div>
+</div>
+{{/unless}}

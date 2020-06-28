@@ -1,0 +1,57 @@
+{{> menu}}
+
+<h1>{{servico.titulo}}</h1>
+
+<form class="form-group" method="POST" action="/servicos/save">
+    <div class="row">
+
+        {{#if ( isMaster usuario.perfil) }}
+        <div class="col-md-12">
+            <label for="userId">Cliente</label>
+            <select class="form-control" id="userId" name="userId" required="true">
+                <option value="" selected="">selecione um cliente</option>
+                {{#each clientes}}
+                <option value="{{id}}">{{name}} - {{email}}</option>
+                {{/each}}   
+            </select>
+        </div>
+        {{else}}
+        <div class="col-md-12">
+            <input type="hidden" class="form-control" id="userId" name="userId" value={{servico.userId}}>
+        </div>
+        {{/if}}
+
+        <div class="col-md-12">
+            <input type="hidden" class="form-control" id="tipo" name="tipo" value={{servico.tipo}}>
+        </div>
+
+        <div class="col-md-6">
+            <label for="Dia">Dia</label>
+            <input type="date" class="form-control" id="Dia" name="Dia" required="true">
+        </div>
+
+        <div class="col-md-6">
+            <label for="Hora">Hora</label>
+            <input type="time" class="form-control" id="Hora" name="Hora" min="07:00" max="18:00" required="true">
+        </div>
+        <div class="col-md-12">
+            <label for="observacao">Observação</label>
+            <textarea class="form-control" id="observacao" name="observacao" maxlength="255"></textarea>
+        </div>
+
+        {{#if errorMsg}}
+        <div class="col-md-12" style="text-align: center;">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="align-items: center;">
+                {{errorMsg}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        {{/if}}
+
+        <div class="col-md-12" style="padding-top: 2%;">
+            <button type="submit" class="btn btn-success btn-block" id="btnSalvar">Agendar</button>
+        </div>
+    </div>
+</form>

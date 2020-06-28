@@ -1,0 +1,42 @@
+{{> menu }}
+
+<div class="container">
+  <form class="form-group" method="POST" action="/usuario/edita">
+    <div class="form-row">
+
+      <div class="col-md-12" style="text-align: center;">
+        <div class="jumbotron jumbotron-fluid">
+          <h1 class="display-6">Olá, {{usuario.user}}</h1>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Seu Nome e Sobrenome" required="true"
+          disabled="true" value="{{usuario.name}}">
+      </div>
+      
+      <div class="col-md-12">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Seu e-mail" required="true"
+          disabled="true" value="{{usuario.email}}">
+      </div>
+
+
+      <div class="col-md-12">
+        <label for="fone">Celular</label>
+        <input type="number" class="form-control" id="fone" name="fone" placeholder="Seu telefone" required="true"
+          disabled="true" value="{{usuario.fone}}">
+      </div>
+
+      <div class="col-md-6" style="padding-top: 2%;">
+        <button type="submit" class="btn btn-primary btn-block" id="bntEditar" onclick="editar()">Editar</button>
+      </div>
+
+      <div class="col-md-6" style="padding-top: 2%;">
+        <button type="submit" class="btn btn-success btn-block" id="btnSalvar" disabled="true">Salvar</button>
+      </div>
+
+    </div>
+  </form>
+</div>

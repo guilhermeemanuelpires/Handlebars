@@ -1,0 +1,34 @@
+{{> menu}}
+
+<h3>{{usuario.name}} essa é sua agenda</h3>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Cod. Serviço</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Dia</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Observação</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each agenda}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{formata-servico tipo}}</td>
+            <td>  {{data-mes-ano Dia}} </td>
+            <td>  {{Hora}} </td>
+            <td>{{observacao }}</td>
+        </tr>
+        {{/each }}
+    </tbody>
+
+</table>
+{{#unless agenda}}
+<div style="text-align: center;">
+    <div class="jumbotron jumbotron-fluid">
+        <p>Nenhum serviço contratado!</p>
+    </div>
+</div>
+{{/unless}}

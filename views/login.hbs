@@ -1,0 +1,72 @@
+<!-- Formulario principla -->
+<div class="centralizaPadrao">
+    <div class="ajustaLogin">
+        <form class="form-group" method="POST" action="/login">
+            <div class="form-row">
+                <div class="col-md-12" style="padding-bottom: 5%;">
+                    <img class="ajustaImg" src="/img/logo.png">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="user">Usuário</label>
+                    <input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp"
+                        placeholder="Usuário">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="password">Senha</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" placeholder="Senha" id="password" name="password">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary fa fa-eye" type="button" id="btnPassword"
+                                onclick="mostrarSenha('password','btnPassword')"></button>
+                        </div>
+                    </div>
+                </div>
+
+                {{#if errorMsg}}
+                <div class="col-md-12" style="text-align: center;">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                        style="align-items: center;">
+                        {{errorMsg}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                {{/if}}
+
+                <div class="col-md-6">
+                    <div class="form-group form-check" style="text-align: center;">
+                        <input type="checkbox" class="form-check-input" id="lembreme" name="lembreme">
+                        <label class="form-check-label" for="lembreme">Lembre-me</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div style="text-align: center;">
+                        <a href="/recuperasenha" class="badge badge-light"><i>Esqueci minha senha!</i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-bottom: 10px;">
+                    <button type="submit" class="btn btn-dark btn-lg btn-block">Entrar</button>
+                </div>
+
+                <div class="col-md-12" style="padding-top: 10px;  padding-bottom: 10px;">
+                    <a type="submit" class="btn btn-outline-secondary btn-lg btn-block" role="button"
+                        href="/register">Registre-se</a>
+
+                </div>
+
+                <div class="col- col-md-12">
+                    <div style="text-align: center;">
+                        <i>Projeto barbearia 1.0</i>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="centralizaPadrao">
+    <div class="container">
+
+        {{#unless sucess}}
+        <form class="form-group" method="POST" action="/recuperasenha/solicita">
+            <div class="form-row">
+                <div class="container" style="text-align: center;">
+                    <h2>Recupere sua senha!</h2>
+                    <p>É necessário que você informe seu e-mail de cadastro!</p>
+                    <h3></h3>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Seu e-mail" required="true">
+                </div>
+
+                {{#if errorMsg}}
+                <div class="col-md-12" style="text-align: center; padding-top: 10px;">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                        style="align-items: center;">
+                        {{errorMsg}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                {{/if}}
+
+                <div class="col-md-12" style="padding-top: 10px;  padding-bottom: 10px;">
+                    <button type="submit" class="btn btn-success btn-block">Recuperar</button>
+                </div>
+
+                <div class="col-md-12" style="padding-top: 10px;  padding-bottom: 10px;">   
+                    <a type="button" class="btn btn-outline-dark btn-lg btn-block" role="button" href="/">Cancelar</a>
+                </div>
+                
+            </div>
+        </form>
+        {{/unless}}
+
+        {{#if sucess}}
+
+        <div style="text-align: center; ">
+            <h3>Verefique sua caixa de e-mail!</h3>
+            <img class="ajustaImg" src="/img/email.gif" style="width: 40%;">
+
+            <div class="col-md-12" style="padding-top: 10px;  padding-bottom: 10px;">
+                <a type="button" class="btn btn-outline-dark btn-lg btn-block" role="button" href="/">Voltar</a>
+            </div>
+
+        </div>
+        {{/if}}
+    </div>
+
+</div>

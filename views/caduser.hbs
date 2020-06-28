@@ -1,0 +1,68 @@
+<div class="centralizaPadrao">
+    <div class="container">
+        <form class="form-group" method="POST" action="/registre">
+            <div class="form-row">
+                <div class="container" style="text-align: center;">
+                    <h2>Cadastro De Usuário</h2>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="name">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Seu Nome e Sobrenome" required="true" value="{{usuario.name}}">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="user">Login</label>
+                    <input type="text" class="form-control" id="user" name="user" placeholder="Seu Login" required="true">
+                </div>
+
+                <div class="col-md-12">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Seu e-mail" required="true">
+                </div>
+
+                <div class="col-md-12">
+                    <label for="fone">Celular</label>
+                    <input type="number" class="form-control" id="fone" name="fone" placeholder="Seu telefone" required="true">
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" placeholder="Digite sua senha" id="password"
+                                name="password" required="true">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary fa fa-eye" type="button"
+                                    id="button-addon" onclick="mostrarSenha('password','button-addon')"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="password2">Confirmar Senha</label> </label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" placeholder="Redigite a senha" id="password2"
+                                name="password2" required="true">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary fa fa-eye" type="button"
+                                    id="button-addon2" onclick="mostrarSenha('password2','button-addon2')"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success btn-block" onclick="return ValidaPassWord('password','password2')" >Cadastrar</button>
+                </div>
+
+                <div class="col-md-12" style="padding-top: 10px;  padding-bottom: 10px;">
+                    <a type="button" class="btn btn-outline-dark btn-lg btn-block" role="button" href="/">Cancelar</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

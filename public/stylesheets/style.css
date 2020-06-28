@@ -1,0 +1,48 @@
+@media(min-width: 800px) {
+    .ajustaPrincipal {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+    .ajustaLogin {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+}
+
+.centralizaPadrao {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.menu {
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+.centralizaBloco {
+    min-height: 100%;
+    /* min-height: 50vh;  */
+    /* display: flex; */
+    align-items: center;
+    margin: 0 auto;
+}
+
+.ajustaImg {
+    width: 100%;
+}
+
+.blocoTitle {
+    text-align: center;
+}
+
+.bloco {
+    padding: 2%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

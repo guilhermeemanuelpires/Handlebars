@@ -1,0 +1,81 @@
+<div class="centralizaPadrao">
+    {{#if sucess}}
+    <div class="container">
+        <form class="form-group" method="POST" action="/recuperasenha/novasenha/save">
+            <div class="row">
+
+                <div class="container" style="text-align: center;">
+                    <h2>Redefina sua Sdenha</h2>
+                </div>
+
+                <div class="col-md-12">
+                    <input type="hidden" class="form-control" placeholder="Digite sua senha" id="hash" value={{hash}}
+                        name="hash" readonly>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" placeholder="Digite sua senha" id="password"
+                                name="password" required="true">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary fa fa-eye" type="button" id="btnPassword1" blur
+                                    onclick="mostrarSenha('password','btnPassword1')"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="password2">Confirmar Senha</label> </label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" placeholder="Redigite a senha" id="password2"
+                                name="password2" required="true">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary fa fa-eye" type="button" id="btnPassword2"
+                                    onclick="mostrarSenha('password2','btnPassword2')"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{#if notValid}}
+                <div class="col-md-12" style="text-align: center;">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                        style="align-items: center;">
+                        {{notValid}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                {{/if}}
+
+                <div class="col-md-12">
+                    <button type="submit" onclick="return ValidaPassWord('password','password2')" class="btn btn-success btn-block">Salvar</button>
+                </div>
+
+                <div class="col-md-12" style="padding-top: 10px;  padding-bottom: 10px;">
+                    <a type="button" class="btn btn-outline-dark btn-lg btn-block" role="button" href="/">Cancelar</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    {{/if}}
+
+    {{#if errorMsg}}
+    <div class="container" style="text-align: center">
+        <div class="alert alert-danger" role="alert">
+            {{errorMsg}}
+        </div>
+
+        <div style="padding-top: 10px;  padding-bottom: 10px;">
+            <a type="button" class="btn btn-outline-dark btn-lg btn-block" role="button" href="/">Voltar</a>
+        </div>
+    </div>
+
+    {{/if}}
+</div>
