@@ -1,6 +1,6 @@
 # Handlebars
 <h4 align="center">
-  <img src="https://user-images.githubusercontent.com/53453342/93119466-3bfb2c80-f698-11ea-977c-a9d325cfcacc.jpg" width="75%" />
+  <img src="https://user-images.githubusercontent.com/53453342/93136605-91dcce00-f6b2-11ea-8971-6951b37aef6f.jpg" width="75%" />
 </h4>
 
 # About 🧾
